@@ -1,1 +1,62 @@
-<p>hero works!</p>
+<section
+  id="home"
+  class="relative scroll-mt-20 overflow-hidden bg-charcoal px-6 py-14 text-soft-white md:py-16"
+>
+  <!-- Subtle engineering grid -->
+  <div
+    class="pointer-events-none absolute inset-0 opacity-[0.06]"
+    aria-hidden="true"
+    style="
+      background-image:
+        linear-gradient(to right, #ffffff 1px, transparent 1px),
+        linear-gradient(to bottom, #ffffff 1px, transparent 1px);
+      background-size: 48px 48px;
+    "
+  ></div>
+
+  <div
+    class="relative mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]"
+  >
+    <!-- Hero text -->
+    <div>
+      <p class="text-sm font-medium uppercase tracking-[0.25em] text-copper">
+        Mechanical Engineer · Product Designer
+      </p>
+
+      <h1
+        class="mt-5 max-w-2xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+      >
+        Hi, I’m Chloe.
+      </h1>
+
+      <p class="mt-7 max-w-xl text-lg leading-8 text-soft-white/70">
+        I take products from early concepts through CAD, prototyping, testing, and
+        manufacturing-ready design.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-soft-white/55">
+        <span>CAD Design</span>
+        <span>Prototyping</span>
+        <span>Testing</span>
+        <span>Manufacturing</span>
+      </div>
+    </div>
+
+    <!-- Hero image -->
+    <div class="relative mx-auto w-full max-w-[560px] lg:justify-self-end">
+      <div class="absolute -inset-4 border border-copper/30"></div>
+
+      <div class="relative aspect-[4/3] overflow-hidden bg-steel">
+        <img
+          src="images/hero-engineering.webp"
+          alt="Mechanical engineer working on technical product drawings"
+          class="h-full w-full object-cover object-center"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-charcoal/35 via-transparent to-transparent"
+        ></div>
+      </div>
+    </div>
+  </div>
+</section>

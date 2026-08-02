@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+@theme {
+  --color-canvas: #f4f1ea;
+  --color-surface: #e6e2d9;
+  --color-graphite: #1d2427;
+  --color-steel: #657176;
+  --color-charcoal: #182024;
+  --color-copper: #a8673d;
+  --color-metal: #c9c4ba;
+  --color-soft-white: #faf9f6;
+}
