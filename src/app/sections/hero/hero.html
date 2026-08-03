@@ -1,87 +1,69 @@
 <section
   id="home"
-  class="relative isolate scroll-mt-20 overflow-hidden bg-canvas px-6 py-14 text-graphite sm:py-16 lg:min-h-[560px] lg:px-10 lg:py-20"
+  class="relative isolate min-h-[580px] scroll-mt-20 overflow-hidden bg-canvas px-6 py-10 text-graphite sm:min-h-[620px] sm:py-14 lg:min-h-[560px] lg:px-10 lg:py-20"
 >
   <!-- Background image -->
   <img
     src="images/hero-engineering.webp"
     alt=""
     aria-hidden="true"
-    class="absolute inset-0 -z-30 h-full w-full object-cover object-[48%_55%] lg:object-[55%_58%]"
+    class="absolute inset-0 -z-30 h-full w-full object-cover object-[40%_center] sm:object-[42%_center] lg:object-[55%_58%]"
   />
 
-  <!-- Mobile readability overlay -->
-  <div class="absolute inset-0 -z-20 bg-canvas/70 lg:hidden"></div>
+  <!-- Mobile overlay: readable at top, clearer image toward bottom -->
+  <div
+    class="absolute inset-0 -z-20 bg-gradient-to-b from-canvas from-5% via-canvas/85 via-48% to-canvas/10 lg:hidden"
+  ></div>
 
-  <!-- Desktop gradient: strong only behind text -->
+  <!-- Desktop overlay -->
   <div
     class="absolute inset-0 -z-20 hidden lg:block"
     style="
       background: linear-gradient(
         90deg,
-        rgba(244, 241, 234, 0.97) 0%,
-        rgba(244, 241, 234, 0.9) 28%,
-        rgba(244, 241, 234, 0.48) 48%,
-        rgba(244, 241, 234, 0.08) 67%,
+        rgba(244, 241, 234, 0.98) 0%,
+        rgba(244, 241, 234, 0.92) 30%,
+        rgba(244, 241, 234, 0.5) 48%,
+        rgba(244, 241, 234, 0.08) 66%,
         transparent 78%
       );
     "
   ></div>
 
-  <!-- Slight bottom gradient for image softness -->
-  <div
-    class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-canvas/30 to-transparent"
-    aria-hidden="true"
-  ></div>
-
-  <div class="mx-auto flex w-full max-w-7xl items-center">
+  <div class="mx-auto flex w-full max-w-7xl items-start lg:items-center">
     <!-- Hero text -->
-    <div
-      class="max-w-xl bg-canvas/55 p-5 backdrop-blur-[1px] sm:p-7 lg:max-w-[610px] lg:bg-transparent lg:p-0 lg:backdrop-blur-none"
-    >
+    <div class="max-w-xl lg:max-w-[610px]">
       <p
-        class="text-sm font-medium uppercase tracking-[0.25em] text-copper lg:text-base lg:tracking-[0.3em]"
+        class="flex flex-col gap-1 text-sm font-medium uppercase leading-6 tracking-[0.25em] text-copper sm:flex-row sm:items-center sm:gap-3 lg:text-base lg:tracking-[0.3em]"
       >
-        Mechanical Engineer · Product Designer
+        <span>Mechanical Engineer</span>
+
+        <span class="hidden sm:inline" aria-hidden="true">·</span>
+
+        <span>Product Designer</span>
       </p>
 
       <h1
-        class="mt-4 text-5xl font-semibold leading-none tracking-tight sm:text-6xl lg:mt-6 lg:text-[5.25rem]"
+        class="mt-4 text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:mt-6 lg:text-[5.25rem]"
       >
         Hi, I’m Chloe.
       </h1>
 
       <p
-        class="mt-5 max-w-lg text-base leading-7 text-graphite/70 sm:text-lg lg:mt-7 lg:max-w-xl lg:text-xl lg:leading-8"
+        class="mt-5 max-w-md text-base leading-7 text-graphite/70 sm:max-w-lg sm:text-lg lg:mt-7 lg:max-w-xl lg:text-xl lg:leading-8"
       >
         I combine technical problem-solving with hands-on design to create practical, manufacturable
         products.
       </p>
 
-      <div class="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap lg:mt-9 lg:gap-4">
-        <span
-          class="border border-metal/80 bg-soft-white/75 px-3 py-2 text-sm font-medium text-graphite/70 backdrop-blur-sm lg:px-4 lg:text-base"
-        >
-          CAD Design
-        </span>
-
-        <span
-          class="border border-metal/80 bg-soft-white/75 px-3 py-2 text-sm font-medium text-graphite/70 backdrop-blur-sm lg:px-4 lg:text-base"
-        >
-          Prototyping
-        </span>
-
-        <span
-          class="border border-metal/80 bg-soft-white/75 px-3 py-2 text-sm font-medium text-graphite/70 backdrop-blur-sm lg:px-4 lg:text-base"
-        >
-          Testing
-        </span>
-
-        <span
-          class="border border-metal/80 bg-soft-white/75 px-3 py-2 text-sm font-medium text-graphite/70 backdrop-blur-sm lg:px-4 lg:text-base"
-        >
-          Manufacturing
-        </span>
+      <!-- Capabilities -->
+      <div
+        class="mt-7 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-graphite/15 pt-5 text-sm font-medium text-graphite/65 sm:flex sm:flex-wrap sm:gap-x-8 lg:mt-9 lg:border-0 lg:pt-0 lg:text-base"
+      >
+        <span>CAD Design</span>
+        <span>Prototyping</span>
+        <span>Testing</span>
+        <span>Manufacturing</span>
       </div>
     </div>
   </div>
