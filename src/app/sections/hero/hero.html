@@ -1,24 +1,44 @@
 <section
   id="home"
-  class="relative scroll-mt-20 overflow-hidden bg-charcoal px-6 py-14 text-soft-white md:py-16 lg:px-10 lg:py-24"
+  class="relative isolate scroll-mt-20 overflow-hidden bg-canvas px-6 py-14 text-graphite sm:py-16 lg:min-h-[560px] lg:px-10 lg:py-20"
 >
-  <!-- Subtle engineering grid -->
-  <div
-    class="pointer-events-none absolute inset-0 opacity-[0.06]"
+  <!-- Background image -->
+  <img
+    src="images/hero-engineering.webp"
+    alt=""
     aria-hidden="true"
+    class="absolute inset-0 -z-30 h-full w-full object-cover object-[48%_55%] lg:object-[55%_58%]"
+  />
+
+  <!-- Mobile readability overlay -->
+  <div class="absolute inset-0 -z-20 bg-canvas/70 lg:hidden"></div>
+
+  <!-- Desktop gradient: strong only behind text -->
+  <div
+    class="absolute inset-0 -z-20 hidden lg:block"
     style="
-      background-image:
-        linear-gradient(to right, #ffffff 1px, transparent 1px),
-        linear-gradient(to bottom, #ffffff 1px, transparent 1px);
-      background-size: 48px 48px;
+      background: linear-gradient(
+        90deg,
+        rgba(244, 241, 234, 0.97) 0%,
+        rgba(244, 241, 234, 0.9) 28%,
+        rgba(244, 241, 234, 0.48) 48%,
+        rgba(244, 241, 234, 0.08) 67%,
+        transparent 78%
+      );
     "
   ></div>
 
+  <!-- Slight bottom gradient for image softness -->
   <div
-    class="relative mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20"
-  >
+    class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-canvas/30 to-transparent"
+    aria-hidden="true"
+  ></div>
+
+  <div class="mx-auto flex w-full max-w-7xl items-center">
     <!-- Hero text -->
-    <div>
+    <div
+      class="max-w-xl bg-canvas/55 p-5 backdrop-blur-[1px] sm:p-7 lg:max-w-[610px] lg:bg-transparent lg:p-0 lg:backdrop-blur-none"
+    >
       <p
         class="text-sm font-medium uppercase tracking-[0.25em] text-copper lg:text-base lg:tracking-[0.3em]"
       >
@@ -26,42 +46,42 @@
       </p>
 
       <h1
-        class="mt-4 max-w-2xl text-5xl font-semibold leading-none tracking-tight sm:text-6xl lg:mt-6 lg:text-[5.25rem]"
+        class="mt-4 text-5xl font-semibold leading-none tracking-tight sm:text-6xl lg:mt-6 lg:text-[5.25rem]"
       >
         Hi, I’m Chloe.
       </h1>
 
       <p
-        class="mt-5 max-w-lg text-base leading-7 text-soft-white/70 sm:text-lg lg:mt-7 lg:max-w-xl lg:text-xl lg:leading-8"
+        class="mt-5 max-w-lg text-base leading-7 text-graphite/70 sm:text-lg lg:mt-7 lg:max-w-xl lg:text-xl lg:leading-8"
       >
         I combine technical problem-solving with hands-on design to create practical, manufacturable
         products.
       </p>
 
-      <div
-        class="mt-6 grid grid-cols-2 gap-x-5 gap-y-2 text-sm font-medium text-soft-white/55 sm:flex sm:flex-wrap sm:gap-x-7 lg:mt-9 lg:gap-x-10 lg:text-base"
-      >
-        <span>CAD Design</span>
-        <span>Prototyping</span>
-        <span>Testing</span>
-        <span>Manufacturing</span>
-      </div>
-    </div>
+      <div class="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap lg:mt-9 lg:gap-4">
+        <span
+          class="border border-metal/80 bg-soft-white/75 px-3 py-2 text-sm font-medium text-graphite/70 backdrop-blur-sm lg:px-4 lg:text-base"
+        >
+          CAD Design
+        </span>
 
-    <!-- Hero image -->
-    <div class="relative mx-auto w-full max-w-[560px] lg:max-w-[620px] lg:justify-self-end">
-      <div class="absolute -inset-4 border border-copper/30 lg:-inset-5"></div>
+        <span
+          class="border border-metal/80 bg-soft-white/75 px-3 py-2 text-sm font-medium text-graphite/70 backdrop-blur-sm lg:px-4 lg:text-base"
+        >
+          Prototyping
+        </span>
 
-      <div class="relative aspect-[4/3] overflow-hidden bg-steel">
-        <img
-          src="images/hero-engineering.webp"
-          alt="Mechanical engineer working on technical product drawings"
-          class="h-full w-full object-cover object-center"
-        />
+        <span
+          class="border border-metal/80 bg-soft-white/75 px-3 py-2 text-sm font-medium text-graphite/70 backdrop-blur-sm lg:px-4 lg:text-base"
+        >
+          Testing
+        </span>
 
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-charcoal/35 via-transparent to-transparent"
-        ></div>
+        <span
+          class="border border-metal/80 bg-soft-white/75 px-3 py-2 text-sm font-medium text-graphite/70 backdrop-blur-sm lg:px-4 lg:text-base"
+        >
+          Manufacturing
+        </span>
       </div>
     </div>
   </div>
