@@ -24,31 +24,70 @@ export class Header implements AfterViewInit, OnDestroy {
     { id: 'contact', label: 'Contact' },
   ];
 
-  private observer?: IntersectionObserver;
+  private sections: HTMLElement[] = [];
+  private animationFrameId: number | null = null;
+
+  private readonly handleScroll = (): void => {
+    if (this.animationFrameId !== null) {
+      return;
+    }
+
+    this.animationFrameId = requestAnimationFrame(() => {
+      this.animationFrameId = null;
+      this.updateActiveSection();
+    });
+  };
 
   ngAfterViewInit(): void {
-    const sections = document.querySelectorAll<HTMLElement>(
-      '#home, #projects, #skills, #about, #contact',
-    );
+    this.sections = this.navigationItems
+      .map((item) => document.getElementById(item.id))
+      .filter((section): section is HTMLElement => section !== null);
 
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSection = entries.find((entry) => entry.isIntersecting);
+    window.addEventListener('scroll', this.handleScroll, { passive: true });
+    window.addEventListener('resize', this.handleScroll);
 
-        if (visibleSection) {
-          this.activeSection.set(visibleSection.target.id as SectionId);
-        }
-      },
-      {
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0,
-      },
-    );
-
-    sections.forEach((section) => this.observer?.observe(section));
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => this.updateActiveSection());
+    });
   }
 
   ngOnDestroy(): void {
-    this.observer?.disconnect();
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleScroll);
+
+    if (this.animationFrameId !== null) {
+      cancelAnimationFrame(this.animationFrameId);
+    }
+  }
+
+  private updateActiveSection(): void {
+    const header = document.getElementById('site-header');
+    const headerHeight = header?.offsetHeight ?? 0;
+
+    // Activate a section shortly after it passes beneath the sticky header.
+    const activationPoint = window.scrollY + headerHeight + 48;
+
+    // Ensure Contact activates when the user reaches the bottom.
+    const isAtBottom =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+    if (isAtBottom) {
+      this.activeSection.set('contact');
+      return;
+    }
+
+    let currentSection: SectionId = 'home';
+
+    for (const section of this.sections) {
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
+      if (sectionTop <= activationPoint) {
+        currentSection = section.id as SectionId;
+      } else {
+        break;
+      }
+    }
+
+    this.activeSection.set(currentSection);
   }
 }
