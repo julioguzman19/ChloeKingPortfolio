@@ -1,23 +1,22 @@
 <header class="sticky top-0 z-50 border-b border-metal/70 bg-canvas/90 backdrop-blur-md">
   <nav
-    class="mx-auto flex max-w-6xl items-center justify-center overflow-x-auto px-4 py-4"
+    class="mx-auto flex max-w-7xl items-center justify-center overflow-x-auto px-4 py-4"
     aria-label="Main navigation"
   >
-    <div class="flex items-center gap-5 whitespace-nowrap text-sm font-medium md:gap-10">
-      <a href="#home" class="text-graphite transition-colors hover:text-copper"> Home </a>
-
-      <a href="#projects" class="text-graphite transition-colors hover:text-copper"> Projects </a>
-
-      <a href="#skills" class="text-graphite transition-colors hover:text-copper"> Skills </a>
-
-      <a href="#about" class="text-graphite transition-colors hover:text-copper"> About </a>
-
-      <a
-        href="#contact"
-        class="border border-copper px-4 py-2 text-copper transition-colors hover:bg-copper hover:text-soft-white"
-      >
-        Contact
-      </a>
+    <div class="flex items-center gap-5 whitespace-nowrap sm:gap-8 lg:gap-10">
+      @for (item of navigationItems; track item.id) {
+        <a
+          [href]="'#' + item.id"
+          class="border-b-2 pb-1 text-sm font-medium transition-colors"
+          [class.border-copper]="activeSection() === item.id"
+          [class.text-copper]="activeSection() === item.id"
+          [class.border-transparent]="activeSection() !== item.id"
+          [class.text-graphite]="activeSection() !== item.id"
+          [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+        >
+          {{ item.label }}
+        </a>
+      }
     </div>
   </nav>
 </header>
