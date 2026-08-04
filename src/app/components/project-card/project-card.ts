@@ -8,7 +8,6 @@ export interface ProjectImage {
 
 export interface Project {
   id: number;
-  category: string;
   title: string;
   summary: string;
   tools: string[];

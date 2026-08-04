@@ -13,7 +13,6 @@ export class Projects {
   readonly projects: Project[] = [
     {
       id: 1,
-      category: 'Engineering Experience · Gentex',
       title: 'Manifold Design & Humidity Characterization',
       summary:
         'Led a team through concept development for a gas-delivery manifold and evaluated pressure drop across existing humidity-control technologies.',
@@ -38,7 +37,6 @@ export class Projects {
     },
     {
       id: 2,
-      category: 'Engineering Experience · Gentex',
       title: 'Pressure, Humidity & Sensor Development',
       summary:
         'Developed experimental gas-supply and humidity-generation systems and supported a process for applying nanofibers consistently onto sensors.',
@@ -68,7 +66,6 @@ export class Projects {
     },
     {
       id: 3,
-      category: 'Engineering Experience · Varex Imaging',
       title: 'X-Ray Subsystem & Production Engineering',
       summary:
         'Led subsystem development, demonstrated safe high-voltage operation, validated production processes, trained technicians, and supported design improvements using engineering analysis.',
@@ -88,7 +85,6 @@ export class Projects {
     },
     {
       id: 4,
-      category: 'Engineering Experience · Peru',
       title: 'Quinoa Processing System',
       summary:
         'Studied an existing agricultural process and helped develop a motorized quinoa washing system using a steel frame, mixing assembly, and lifting mechanism.',

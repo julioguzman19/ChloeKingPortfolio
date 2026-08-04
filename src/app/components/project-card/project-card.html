@@ -1,5 +1,5 @@
 <article
-  class="flex h-full flex-col overflow-hidden border border-metal bg-soft-white transition-shadow hover:shadow-lg"
+  class="flex h-full flex-col overflow-hidden rounded-xl border border-metal bg-soft-white transition-shadow hover:shadow-lg"
 >
   @if (project.images.length > 0) {
     <!-- Image carousel -->
@@ -10,21 +10,21 @@
         class="h-full w-full object-cover transition duration-500"
       />
 
-      <!-- Bottom gradient -->
+      <!-- Subtle bottom gradient -->
       <div
-        class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-charcoal/65 to-transparent"
+        class="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-charcoal/35 to-transparent"
       ></div>
 
       <!-- Current image label -->
       <p
-        class="absolute left-4 top-4 max-w-[70%] bg-charcoal/80 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-soft-white backdrop-blur-sm"
+        class="absolute left-4 top-4 max-w-[65%] rounded-full border border-soft-white/40 bg-charcoal/25 px-3 py-1.5 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-soft-white shadow-sm backdrop-blur-[2px] sm:text-xs"
       >
         {{ project.images[activeImageIndex].label }}
       </p>
 
       <!-- Image count -->
       <p
-        class="absolute right-4 top-4 bg-charcoal/80 px-2.5 py-1.5 text-xs text-soft-white backdrop-blur-sm"
+        class="absolute right-4 top-4 rounded-full border border-soft-white/40 bg-charcoal/25 px-2.5 py-1.5 text-xs text-soft-white shadow-sm backdrop-blur-[2px]"
       >
         {{ activeImageIndex + 1 }} / {{ project.images.length }}
       </p>
@@ -33,7 +33,7 @@
         <!-- Previous image -->
         <button
           type="button"
-          class="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center border border-soft-white/50 bg-charcoal/55 text-soft-white backdrop-blur-sm transition hover:bg-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+          class="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-soft-white/50 bg-charcoal/25 text-soft-white shadow-sm backdrop-blur-[2px] transition hover:bg-charcoal/55 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
           [attr.aria-label]="'Show previous image for ' + project.title"
           (click)="previousImage()"
         >
@@ -43,7 +43,7 @@
         <!-- Next image -->
         <button
           type="button"
-          class="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center border border-soft-white/50 bg-charcoal/55 text-soft-white backdrop-blur-sm transition hover:bg-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+          class="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-soft-white/50 bg-charcoal/25 text-soft-white shadow-sm backdrop-blur-[2px] transition hover:bg-charcoal/55 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
           [attr.aria-label]="'Show next image for ' + project.title"
           (click)="nextImage()"
         >
@@ -52,16 +52,16 @@
 
         <!-- Image selectors -->
         <div
-          class="absolute inset-x-4 bottom-4 grid gap-1"
+          class="absolute inset-x-4 bottom-4 grid gap-1.5"
           [style.grid-template-columns]="'repeat(' + project.images.length + ', minmax(0, 1fr))'"
         >
           @for (image of project.images; track image.src; let imageIndex = $index) {
             <button
               type="button"
-              class="h-1 transition-colors"
+              class="h-1 rounded-full border border-soft-white/30 transition-all"
               [class.bg-copper]="activeImageIndex === imageIndex"
               [class.bg-soft-white]="activeImageIndex !== imageIndex"
-              [class.opacity-50]="activeImageIndex !== imageIndex"
+              [class.opacity-60]="activeImageIndex !== imageIndex"
               [attr.aria-label]="'Show ' + image.label + ' image for ' + project.title"
               [attr.aria-current]="activeImageIndex === imageIndex ? 'true' : null"
               (click)="showImage(imageIndex)"
@@ -74,10 +74,6 @@
 
   <!-- Card content -->
   <div class="flex flex-1 flex-col p-6">
-    <p class="text-xs font-medium uppercase tracking-[0.18em] text-copper">
-      {{ project.category }}
-    </p>
-
     <h3 class="mt-3 text-2xl font-semibold tracking-tight text-graphite">
       {{ project.title }}
     </h3>
@@ -96,7 +92,7 @@
         <div class="mt-3 flex flex-wrap gap-2">
           @for (tool of project.tools; track tool) {
             <span
-              class="border border-metal bg-canvas px-2.5 py-1.5 text-xs font-medium text-steel"
+              class="rounded-full border border-metal bg-canvas px-3 py-1.5 text-xs font-medium text-steel"
             >
               {{ tool }}
             </span>
