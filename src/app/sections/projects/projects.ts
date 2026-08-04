@@ -17,10 +17,10 @@ export class Projects {
       summary:
         'Led a team through concept development for a gas-delivery manifold and evaluated pressure drop across existing humidity-control technologies.',
       tools: [
-        'Team Leadership',
-        'System Design',
-        'Pressure-Drop Testing',
         'Experimental Testing',
+        'Pressure-Drop Testing',
+        'System Design',
+        'Team Leadership',
       ],
       images: [
         {
@@ -42,9 +42,9 @@ export class Projects {
         'Developed experimental gas-supply and humidity-generation systems and supported a process for applying nanofibers consistently onto sensors.',
       tools: [
         'Alicat Flow Control',
-        'Swagelok',
-        'Prototype Development',
         'Process Testing',
+        'Prototype Development',
+        'Swagelok',
       ],
       images: [
         {
@@ -70,10 +70,10 @@ export class Projects {
       summary:
         'Led subsystem development, demonstrated safe high-voltage operation, validated production processes, trained technicians, and supported design improvements using engineering analysis.',
       tools: [
-        'System Integration',
-        'Verification & Validation',
         'FEA & CFD',
+        'System Integration',
         'Technician Training',
+        'Verification & Validation',
       ],
       images: [
         {
@@ -89,10 +89,10 @@ export class Projects {
       summary:
         'Studied an existing agricultural process and helped develop a motorized quinoa washing system using a steel frame, mixing assembly, and lifting mechanism.',
       tools: [
-        'Human-Centered Design',
         'Fabrication',
-        'Process Development',
         'Field Testing',
+        'Human-Centered Design',
+        'Process Development',
       ],
       images: [
         {
