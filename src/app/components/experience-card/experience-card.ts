@@ -15,10 +15,10 @@ export interface Project {
 }
 
 @Component({
-  selector: 'app-project-card',
+  selector: 'app-experience-card',
   imports: [],
-  templateUrl: './project-card.html',
-  styleUrl: './project-card.css',
+  templateUrl: './experience-card.html',
+  styleUrl: './experience-card.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectCard {

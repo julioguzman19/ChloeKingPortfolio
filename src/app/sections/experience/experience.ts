@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { Project, ProjectCard } from '../../components/project-card/project-card';
+import { Project, ProjectCard } from '../../components/experience-card/experience-card';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'app-experience',
   imports: [ProjectCard],
-  templateUrl: './projects.html',
-  styleUrl: './projects.css',
+  templateUrl: './experience.html',
+  styleUrl: './experience.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Projects {
+export class Experience {
   readonly projects: Project[] = [
     {
       id: 1,

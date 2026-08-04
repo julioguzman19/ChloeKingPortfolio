@@ -1,0 +1,36 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-label="CK"
+>
+  <!-- Deep avocado-green background -->
+  <rect width="64" height="64" rx="14" fill="#26452A" />
+
+  <!-- Bright avocado-green border -->
+  <rect
+    x="3"
+    y="3"
+    width="58"
+    height="58"
+    rx="11"
+    fill="none"
+    stroke="#A8C94B"
+    stroke-width="4"
+  />
+
+
+  <!-- Initials -->
+  <text
+    x="32"
+    y="41"
+    fill="#FFF6D8"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="30"
+    font-weight="800"
+    letter-spacing="-1"
+    text-anchor="middle"
+  >
+    CK
+  </text>
+</svg>

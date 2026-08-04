@@ -1,4 +1,4 @@
-<section id="projects" class="scroll-mt-20 bg-canvas px-6 py-16 text-graphite lg:px-10 lg:py-20">
+<section id="experience" class="scroll-mt-20 bg-canvas px-6 py-16 text-graphite lg:px-10 lg:py-20">
   <div class="mx-auto max-w-7xl">
     <!-- Section heading -->
     <div class="max-w-3xl">
@@ -14,7 +14,7 @@
     <!-- Experience grid -->
     <div class="mt-10 grid items-stretch gap-7 md:grid-cols-2">
       @for (project of projects; track project.id) {
-        <app-project-card [project]="project"></app-project-card>
+        <app-experience-card [project]="project"></app-experience-card>
       }
     </div>
   </div>

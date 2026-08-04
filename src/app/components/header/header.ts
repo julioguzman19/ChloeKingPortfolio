@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnDestroy, signal } from '@angular/core';
 
-type SectionId = 'home' | 'projects' | 'skills' | 'about' | 'contact';
+type SectionId = 'home' | 'experience' | 'skills' | 'about' | 'contact';
 
 interface NavigationItem {
   id: SectionId;
@@ -18,7 +18,7 @@ export class Header implements AfterViewInit, OnDestroy {
 
   protected readonly navigationItems: NavigationItem[] = [
     { id: 'home', label: 'Home' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
