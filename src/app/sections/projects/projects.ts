@@ -1,145 +1,115 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-interface ProjectImage {
-  src: string;
-  alt: string;
-  stage: 'Design' | 'Prototyping' | 'Testing' | 'Manufacturing';
-}
-
-interface Project {
-  id: string;
-  title: string;
-  category: string;
-  summary: string;
-  tools: string[];
-  images: ProjectImage[];
-}
+import { Project, ProjectCard } from '../../components/project-card/project-card';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [ProjectCard],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Projects {
-  protected readonly projects: Project[] = [
+  readonly projects: Project[] = [
     {
-      id: 'engine',
-      title: 'Pipsqueak Engine',
-      category: 'Mechanical Systems',
+      id: 1,
+      category: 'Engineering Experience · Gentex',
+      title: 'Manifold Design & Humidity Characterization',
       summary:
-        'Designed, fabricated, assembled, and tested a functioning mechanical engine.',
-      tools: ['SolidWorks', 'Machining', 'Assembly', 'Testing'],
+        'Led a team through concept development for a gas-delivery manifold and evaluated pressure drop across existing humidity-control technologies.',
+      tools: [
+        'Team Leadership',
+        'System Design',
+        'Pressure-Drop Testing',
+        'Experimental Testing',
+      ],
       images: [
         {
-          src: 'images/projects/engine-design.webp',
-          alt: 'CAD design of the Pipsqueak engine',
-          stage: 'Design',
+          src: 'images/gentext_brainstorm.png',
+          alt: 'Engineering team organizing concepts for a gas-delivery manifold',
+          label: 'Manifold Development',
         },
         {
-          src: 'images/projects/engine-prototype.webp',
-          alt: 'Prototype components for the Pipsqueak engine',
-          stage: 'Prototyping',
-        },
-        {
-          src: 'images/projects/engine-testing.webp',
-          alt: 'Testing the assembled Pipsqueak engine',
-          stage: 'Testing',
-        },
-        {
-          src: 'images/projects/engine-manufacturing.webp',
-          alt: 'Manufactured components of the Pipsqueak engine',
-          stage: 'Manufacturing',
+          src: 'images/gentex_nafion.png',
+          alt: 'Nafion and Perma Pure humidity-control technology being evaluated',
+          label: 'Humidity Characterization',
         },
       ],
     },
     {
-      id: 'project-two',
-      title: 'Project Two',
-      category: 'Product Design',
+      id: 2,
+      category: 'Engineering Experience · Gentex',
+      title: 'Pressure, Humidity & Sensor Development',
       summary:
-        'Briefly explain the problem, your contribution, and the final engineering result.',
-      tools: ['SolidWorks', '3D Printing', 'DFM'],
+        'Developed experimental gas-supply and humidity-generation systems and supported a process for applying nanofibers consistently onto sensors.',
+      tools: [
+        'Alicat Flow Control',
+        'Swagelok',
+        'Prototype Development',
+        'Process Testing',
+      ],
       images: [
         {
-          src: 'images/projects/project-two-design.webp',
-          alt: 'Design stage of project two',
-          stage: 'Design',
+          src: 'images/gentex_alicats.png',
+          alt: 'Gas-flow test system using Alicat flow meters, tubing, and fittings',
+          label: 'Regulated Gas Supply',
         },
         {
-          src: 'images/projects/project-two-prototype.webp',
-          alt: 'Prototype stage of project two',
-          stage: 'Prototyping',
+          src: 'images/gentex_expresso.png',
+          alt: 'Modified espresso maker used to investigate pressure and humidity generation',
+          label: 'Humidity Generation',
         },
         {
-          src: 'images/projects/project-two-testing.webp',
-          alt: 'Testing stage of project two',
-          stage: 'Testing',
-        },
-        {
-          src: 'images/projects/project-two-manufacturing.webp',
-          alt: 'Manufacturing stage of project two',
-          stage: 'Manufacturing',
+          src: 'images/gentex_sprayer.png',
+          alt: 'Experimental equipment used to apply nanofibers evenly onto sensors',
+          label: 'Nanofiber Deposition',
         },
       ],
     },
     {
-      id: 'project-three',
-      title: 'Project Three',
-      category: 'Testing & Analysis',
+      id: 3,
+      category: 'Engineering Experience · Varex Imaging',
+      title: 'X-Ray Subsystem & Production Engineering',
       summary:
-        'Describe what was evaluated, how the design changed, and what you learned.',
-      tools: ['Analysis', 'Instrumentation', 'Validation'],
+        'Led subsystem development, demonstrated safe high-voltage operation, validated production processes, trained technicians, and supported design improvements using engineering analysis.',
+      tools: [
+        'System Integration',
+        'Verification & Validation',
+        'FEA & CFD',
+        'Technician Training',
+      ],
       images: [
         {
-          src: 'images/projects/project-three-design.webp',
-          alt: 'Design stage of project three',
-          stage: 'Design',
+          src: 'images/varex_qew.png',
+          alt: 'Safe testing and operation of a high-voltage x-ray subsystem',
+          label: 'High-Voltage Subsystem',
+        },
+      ],
+    },
+    {
+      id: 4,
+      category: 'Engineering Experience · Peru',
+      title: 'Quinoa Processing System',
+      summary:
+        'Studied an existing agricultural process and helped develop a motorized quinoa washing system using a steel frame, mixing assembly, and lifting mechanism.',
+      tools: [
+        'Human-Centered Design',
+        'Fabrication',
+        'Process Development',
+        'Field Testing',
+      ],
+      images: [
+        {
+          src: 'images/peru_farmer.png',
+          alt: 'Existing quinoa-processing methods observed in a rural Peruvian community',
+          label: 'Process Research',
         },
         {
-          src: 'images/projects/project-three-prototype.webp',
-          alt: 'Prototype stage of project three',
-          stage: 'Prototyping',
-        },
-        {
-          src: 'images/projects/project-three-testing.webp',
-          alt: 'Testing stage of project three',
-          stage: 'Testing',
-        },
-        {
-          src: 'images/projects/project-three-manufacturing.webp',
-          alt: 'Manufacturing stage of project three',
-          stage: 'Manufacturing',
+          src: 'images/peru_washingMachine.png',
+          alt: 'Motorized quinoa washing system developed for small-scale processing',
+          label: 'Quinoa Washer',
         },
       ],
     },
   ];
-
-  private readonly activeIndexes = signal<Record<string, number>>({});
-
-  protected activeImageIndex(projectId: string): number {
-    return this.activeIndexes()[projectId] ?? 0;
-  }
-
-  protected showImage(projectId: string, imageIndex: number): void {
-    this.activeIndexes.update((indexes) => ({
-      ...indexes,
-      [projectId]: imageIndex,
-    }));
-  }
-
-  protected previousImage(project: Project): void {
-    const currentIndex = this.activeImageIndex(project.id);
-    const previousIndex =
-      currentIndex === 0 ? project.images.length - 1 : currentIndex - 1;
-
-    this.showImage(project.id, previousIndex);
-  }
-
-  protected nextImage(project: Project): void {
-    const currentIndex = this.activeImageIndex(project.id);
-    const nextIndex = (currentIndex + 1) % project.images.length;
-
-    this.showImage(project.id, nextIndex);
-  }
 }

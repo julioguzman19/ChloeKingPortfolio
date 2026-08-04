@@ -1,0 +1,108 @@
+<article
+  class="flex h-full flex-col overflow-hidden border border-metal bg-soft-white transition-shadow hover:shadow-lg"
+>
+  @if (project.images.length > 0) {
+    <!-- Image carousel -->
+    <div class="group relative aspect-[4/3] overflow-hidden bg-surface">
+      <img
+        [src]="project.images[activeImageIndex].src"
+        [alt]="project.images[activeImageIndex].alt"
+        class="h-full w-full object-cover transition duration-500"
+      />
+
+      <!-- Bottom gradient -->
+      <div
+        class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-charcoal/65 to-transparent"
+      ></div>
+
+      <!-- Current image label -->
+      <p
+        class="absolute left-4 top-4 max-w-[70%] bg-charcoal/80 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-soft-white backdrop-blur-sm"
+      >
+        {{ project.images[activeImageIndex].label }}
+      </p>
+
+      <!-- Image count -->
+      <p
+        class="absolute right-4 top-4 bg-charcoal/80 px-2.5 py-1.5 text-xs text-soft-white backdrop-blur-sm"
+      >
+        {{ activeImageIndex + 1 }} / {{ project.images.length }}
+      </p>
+
+      @if (project.images.length > 1) {
+        <!-- Previous image -->
+        <button
+          type="button"
+          class="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center border border-soft-white/50 bg-charcoal/55 text-soft-white backdrop-blur-sm transition hover:bg-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+          [attr.aria-label]="'Show previous image for ' + project.title"
+          (click)="previousImage()"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <!-- Next image -->
+        <button
+          type="button"
+          class="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center border border-soft-white/50 bg-charcoal/55 text-soft-white backdrop-blur-sm transition hover:bg-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+          [attr.aria-label]="'Show next image for ' + project.title"
+          (click)="nextImage()"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <!-- Image selectors -->
+        <div
+          class="absolute inset-x-4 bottom-4 grid gap-1"
+          [style.grid-template-columns]="'repeat(' + project.images.length + ', minmax(0, 1fr))'"
+        >
+          @for (image of project.images; track image.src; let imageIndex = $index) {
+            <button
+              type="button"
+              class="h-1 transition-colors"
+              [class.bg-copper]="activeImageIndex === imageIndex"
+              [class.bg-soft-white]="activeImageIndex !== imageIndex"
+              [class.opacity-50]="activeImageIndex !== imageIndex"
+              [attr.aria-label]="'Show ' + image.label + ' image for ' + project.title"
+              [attr.aria-current]="activeImageIndex === imageIndex ? 'true' : null"
+              (click)="showImage(imageIndex)"
+            ></button>
+          }
+        </div>
+      }
+    </div>
+  }
+
+  <!-- Card content -->
+  <div class="flex flex-1 flex-col p-6">
+    <p class="text-xs font-medium uppercase tracking-[0.18em] text-copper">
+      {{ project.category }}
+    </p>
+
+    <h3 class="mt-3 text-2xl font-semibold tracking-tight text-graphite">
+      {{ project.title }}
+    </h3>
+
+    <p class="mt-3 text-sm leading-6 text-steel">
+      {{ project.summary }}
+    </p>
+
+    <!-- Tools -->
+    <div class="mt-auto pt-6">
+      <div class="border-t border-metal pt-5">
+        <p class="text-xs font-medium uppercase tracking-[0.16em] text-copper">
+          Tools &amp; Technology
+        </p>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          @for (tool of project.tools; track tool) {
+            <span
+              class="border border-metal bg-canvas px-2.5 py-1.5 text-xs font-medium text-steel"
+            >
+              {{ tool }}
+            </span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
