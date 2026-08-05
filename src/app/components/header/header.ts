@@ -11,7 +11,6 @@ interface NavigationItem {
   selector: 'app-header',
   imports: [],
   templateUrl: './header.html',
-  styleUrl: './header.css',
 })
 export class Header implements AfterViewInit, OnDestroy {
   protected readonly activeSection = signal<SectionId>('home');

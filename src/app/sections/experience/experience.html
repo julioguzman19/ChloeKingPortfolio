@@ -1,20 +1,10 @@
-<section id="experience" class="scroll-mt-20 bg-canvas px-6 py-16 text-graphite lg:px-10 lg:py-20">
+<section id="experience" class="section-shell bg-surface text-graphite">
   <div class="mx-auto max-w-7xl">
-    <!-- Section heading -->
-    <div class="max-w-3xl">
-      <p class="text-sm font-medium uppercase tracking-[0.25em] text-copper">
-        Engineering Experience
-      </p>
+    <app-section-heading title="Experience" />
 
-      <h2 class="mt-3 text-4xl font-semibold tracking-tight text-graphite sm:text-5xl">
-        Engineering in practice.
-      </h2>
-    </div>
-
-    <!-- Experience grid -->
-    <div class="mt-10 grid items-stretch gap-7 md:grid-cols-2">
-      @for (project of projects; track project.id) {
-        <app-experience-card [project]="project"></app-experience-card>
+    <div class="mt-7 grid items-stretch gap-7 md:grid-cols-2">
+      @for (experience of experiences; track experience.id) {
+        <app-experience-card [project]="experience"></app-experience-card>
       }
     </div>
   </div>

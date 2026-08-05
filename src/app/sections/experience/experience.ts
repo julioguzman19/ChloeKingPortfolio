@@ -1,16 +1,16 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-
 import { Project, ProjectCard } from '../../components/experience-card/experience-card';
+import { SectionHeadingComponent } from '../../components/section-heading/section-heading';
+
 
 @Component({
   selector: 'app-experience',
-  imports: [ProjectCard],
+  imports: [ProjectCard, SectionHeadingComponent],
   templateUrl: './experience.html',
-  styleUrl: './experience.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Experience {
-  readonly projects: Project[] = [
+  readonly experiences: Project[] = [
     {
       id: 1,
       title: 'Manifold Design & Humidity Characterization',
@@ -24,7 +24,7 @@ export class Experience {
       ],
       images: [
         {
-          src: 'images/gentext_brainstorm.png',
+          src: 'images/gentex_brainstorm.png',
           alt: 'Engineering team organizing concepts for a gas-delivery manifold',
           label: 'Manifold Development',
         },

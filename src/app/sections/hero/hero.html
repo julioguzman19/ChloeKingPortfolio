@@ -1,87 +1,75 @@
+<!-- Hero -->
 <section
   id="home"
-  class="relative isolate min-h-[560px] scroll-mt-20 overflow-hidden bg-canvas px-6 pb-8 pt-8 text-graphite sm:min-h-[620px] sm:py-14 lg:min-h-[560px] lg:px-10 lg:py-20"
+  class="relative isolate scroll-mt-20 overflow-hidden bg-canvas px-6 pb-10 pt-5 text-graphite sm:px-8 sm:pb-14 sm:pt-12 lg:min-h-[680px] lg:px-10 lg:py-20"
 >
-  <!-- Background image -->
-  <img
-    src="images/hero-engineering.webp"
-    alt=""
+  <!-- Subtle background grid -->
+  <div
     aria-hidden="true"
-    class="absolute inset-0 -z-30 h-full w-full object-cover object-[40%_center] sm:object-[42%_center] lg:object-[55%_58%]"
-  />
-
-  <!-- Mobile overlay -->
-  <div
-    class="absolute inset-0 -z-20 lg:hidden"
+    class="absolute inset-0 -z-20 opacity-[0.04]"
     style="
-      background: linear-gradient(
-        to bottom,
-        rgba(244, 241, 234, 0.97) 0%,
-        rgba(244, 241, 234, 0.92) 36%,
-        rgba(244, 241, 234, 0.66) 54%,
-        rgba(244, 241, 234, 0.2) 72%,
-        transparent 88%
-      );
+      background-image:
+        linear-gradient(to right, currentColor 1px, transparent 1px),
+        linear-gradient(to bottom, currentColor 1px, transparent 1px);
+      background-size: 48px 48px;
     "
   ></div>
 
-  <!-- Desktop overlay -->
   <div
-    class="absolute inset-0 -z-20 hidden lg:block"
-    style="
-      background: linear-gradient(
-        90deg,
-        rgba(244, 241, 234, 0.98) 0%,
-        rgba(244, 241, 234, 0.92) 30%,
-        rgba(244, 241, 234, 0.5) 48%,
-        rgba(244, 241, 234, 0.08) 66%,
-        transparent 78%
-      );
-    "
-  ></div>
-
-  <div class="mx-auto flex w-full max-w-7xl items-start lg:items-center">
+    class="mx-auto grid w-full max-w-7xl items-center gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(380px,520px)] lg:gap-16"
+  >
     <!-- Hero content -->
-    <div class="flex min-h-[500px] max-w-xl flex-col lg:min-h-0 lg:max-w-[640px]">
-      <!-- Main message -->
-      <div class="order-1 lg:order-2">
-        <h1
-          class="text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-[5.25rem]"
-        >
-          Hi, I’m Chloe.
-        </h1>
+    <div class="max-w-2xl">
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.24em] text-copper sm:text-sm sm:tracking-[0.3em]"
+      >
+        Mechanical Engineer II
+      </p>
 
-        <p
-          class="mt-5 max-w-lg text-base leading-7 text-graphite/70 sm:text-lg lg:mt-7 lg:max-w-2xl lg:text-xl lg:leading-8"
-        >
-          I’m a collaborative mechanical engineer who enjoys sharing ideas, iterating quickly, and
-          bringing clarity to complex projects through curiosity, creativity, and practical problem
-          solving.
-        </p>
-      </div>
+      <h1
+        class="mt-3 text-5xl font-semibold leading-[0.95] tracking-tight sm:mt-4 sm:text-6xl lg:mt-5 lg:text-[5.5rem]"
+      >
+        Hi, I’m Chloe.
+      </h1>
 
-      <!-- Strengths: bottom on mobile, below message on desktop -->
-      <div class="order-2 mt-auto pt-10 lg:order-3 lg:mt-9 lg:pt-0">
-        <div class="mb-4 h-px w-12 bg-copper lg:hidden"></div>
+      <h2
+        class="mt-4 max-w-xl text-2xl font-medium leading-tight tracking-tight sm:mt-5 sm:text-3xl lg:mt-6 lg:text-4xl"
+      >
+        I like figuring out how things work and making them work better.
+      </h2>
+
+      <p
+        class="mt-4 max-w-xl text-base leading-7 text-graphite/70 sm:mt-5 sm:text-lg sm:leading-8 lg:mt-6"
+      >
+        I’m a hands-on engineer who enjoys messy whiteboards, quick prototypes, and the moment a
+        stubborn design finally clicks. I take ideas from CAD through testing and turn them into
+        practical solutions that can actually be built usually with a notebook, a wrench, or both
+        nearby.
+      </p>
+    </div>
+
+    <!-- Personal image -->
+    <div class="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+      <figure
+        class="relative overflow-hidden rounded-3xl bg-graphite shadow-[0_18px_45px_rgba(34,38,39,0.14)]"
+      >
+        <img
+          src="images/hero-personal.png"
+          alt="Chloe holding a custom mirror panel outdoors"
+          class="h-[250px] w-full object-cover object-[center_42%] sm:h-[420px] lg:h-[590px]"
+        />
 
         <div
-          class="grid grid-cols-2 gap-x-6 gap-y-3 text-xs font-medium text-soft-white [text-shadow:0_1px_10px_rgba(0,0,0,0.7)] sm:flex sm:flex-wrap sm:gap-x-7 lg:text-base lg:text-graphite/70 lg:[text-shadow:none]"
-        >
-          <span>Mechanical Systems</span>
-          <span>SolidWorks &amp; AutoCAD</span>
-          <span>Testing &amp; Validation</span>
-          <span>Process Improvement</span>
-        </div>
-      </div>
+          aria-hidden="true"
+          class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-soft-white/15"
+        ></div>
 
-      <!-- Role: last on mobile, first on desktop -->
-      <div class="order-3 mt-6 lg:order-1 lg:mt-0 lg:pb-7">
-        <p
-          class="text-xs font-medium uppercase leading-5 tracking-[0.24em] text-soft-white [text-shadow:0_1px_10px_rgba(0,0,0,0.7)] lg:text-base lg:tracking-[0.3em] lg:text-copper lg:[text-shadow:none]"
+        <figcaption
+          class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-graphite/85 via-graphite/30 to-transparent px-4 pb-4 pt-12 text-xs leading-5 text-soft-white sm:px-5 sm:pb-5 sm:pt-16 sm:text-sm"
         >
-          Mechanical Engineer II
-        </p>
-      </div>
+          Sometimes engineering means designing it, building it, and carrying it yourself.
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
