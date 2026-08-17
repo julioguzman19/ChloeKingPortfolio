@@ -1,56 +1,48 @@
-<section id="about" class="section-shell bg-surface text-graphite">
+<section
+  id="about"
+  class="scroll-mt-20 bg-surface px-6 pb-12 pt-8 text-graphite sm:px-8 sm:py-12 lg:px-10 lg:py-16"
+>
   <div class="mx-auto max-w-7xl">
     <!-- Section heading -->
     <app-section-heading title="About me" />
 
     <!-- About content -->
-    <div class="mt-8 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14">
-      <!-- Introduction -->
-      <p class="max-w-2xl text-lg leading-8 text-steel sm:text-xl sm:leading-9">
-        I’m not very good at leaving ideas as ideas. I’ve designed and built my own custom mirror,
-        modeled friends’ rooms and backyards in SolidWorks, and continued sharpening my skills
-        through every project I take on—both professionally and in my own time. I’m comfortable
-        picking up tools, working through problems hands on, and learning whatever is needed to turn
-        an idea into something real.
-      </p>
+    <div class="mt-7">
+      <!-- Introduction + image -->
+      <div class="grid gap-7 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14">
+        <!-- Introduction -->
+        <p class="max-w-2xl text-lg leading-8 text-steel sm:text-xl sm:leading-9">
+          I'm not good at leaving ideas as ideas. I've designed and built my own modular grid mirror
+          system with removable panels, modeled friends' homes in SolidWorks, and continued
+          sharpening my skills through every project I take on both professionally and in my own
+          time. I'm comfortable picking up tools, working through problems hands on, and taking
+          ideas through the full engineering process from developing a concept and building a
+          prototype to testing, refining, and improving the final solution.
+        </p>
+
+        <!-- Personal image -->
+        <div class="overflow-hidden rounded-3xl">
+          <img
+            src="images/chloeTools.png"
+            alt="Chloe working with power tools"
+            class="h-[260px] w-full object-cover sm:h-[340px] lg:h-[360px]"
+          />
+        </div>
+      </div>
 
       <!-- Personal details -->
-      <dl class="grid gap-3 sm:grid-cols-2">
-        <div class="rounded-2xl border border-metal bg-canvas p-4">
-          <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-copper">
-            I like to create
-          </dt>
+      <dl class="mt-7 grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        @for (detail of aboutDetails; track detail.title) {
+          <div class="h-full rounded-2xl border border-metal bg-canvas p-5">
+            <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-copper">
+              {{ detail.title }}
+            </dt>
 
-          <dd class="mt-2 text-sm leading-6 text-steel sm:text-base">
-            Practical ideas that become real
-          </dd>
-        </div>
-
-        <div class="rounded-2xl border border-metal bg-canvas p-4">
-          <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-copper">
-            I like to model
-          </dt>
-
-          <dd class="mt-2 text-sm leading-6 text-steel sm:text-base">
-            Rooms, backyards, and new concepts
-          </dd>
-        </div>
-
-        <div class="rounded-2xl border border-metal bg-canvas p-4">
-          <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-copper">
-            Working style
-          </dt>
-
-          <dd class="mt-2 text-sm leading-6 text-steel sm:text-base">
-            Hands-on, curious, and resourceful
-          </dd>
-        </div>
-
-        <div class="rounded-2xl border border-metal bg-canvas p-4">
-          <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Location</dt>
-
-          <dd class="mt-2 text-sm leading-6 text-steel sm:text-base">Salt Lake City, Utah</dd>
-        </div>
+            <dd class="mt-2 text-sm leading-6 text-steel sm:text-base">
+              {{ detail.description }}
+            </dd>
+          </div>
+        }
       </dl>
     </div>
   </div>
